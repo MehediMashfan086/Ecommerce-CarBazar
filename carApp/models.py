@@ -33,3 +33,15 @@ class Size(models.Model):
     
     def __str__(self):
         return self.title
+
+# Color
+class Product(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.CharField(max_length=500)
+    detail = models.TextField()
+    specification = models.TextField()
+    price = models.PositiveBigIntegerField()
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.title
